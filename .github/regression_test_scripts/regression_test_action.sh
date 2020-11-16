@@ -41,9 +41,21 @@ do_a_test_expect_failure()
 	fi
 }
 
-echo "Starting push actions"
+echo "Starting regression actions"
 echo "Running on OS: $(uname -a)"
-command -v python3
+
+if ! command -v python3
+then
+    echo "python3 is not installed, attempting to install"
+    sudo apt-get install python3
+fi
+
+if ! command -v pip3
+then
+    echo "pip3 is not installed, attempting to install"
+    sudo apt-get install pip3
+fi
+
 python3 --version
 pip3 --version
 
