@@ -49,16 +49,16 @@ pip3 --version
 
 # FIXME: Should these be in requirements.txt ?
 # FIXME: Shoudl not be needed? pip3 install Cython 
-pip3 install pylint
-pip3 install flake8
+#pip3 install pylint
+#pip3 install flake8
 
-pylint --version
-flake8 --version
+#pylint --version
+#flake8 --version
 
-echo "PWD $(pwd)
+echo "PWD $(pwd)"
 echo "Changing to checkout directory..."
 cd $GITHUB_WORKSPACE
-echo "PWD $(pwd)
+echo "PWD $(pwd)"
 echo "Directory contents: $(ls)"
 
 do_a_test_expect_success "pip3 install -r requirements.txt" "Install requirements.txt"
