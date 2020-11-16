@@ -57,7 +57,7 @@ pip3 --version
 
 echo "PWD $(pwd)"
 echo "Changing to checkout directory..."
-cd $GITHUB_WORKSPACE
+cd $GITHUB_WORKSPACE || exit
 echo "PWD $(pwd)"
 echo "Directory contents: $(ls)"
 
