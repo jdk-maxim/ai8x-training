@@ -1,4 +1,4 @@
-name: Sanity_Check_Docker_Action
+name: Regression Test Docker Action
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       id: pytorch_action
       uses: jdk-maxim/pytorch-requirements-check-action@master
       with:
-        file-to-run: '.github/regression_test_scripts/push_actions.sh'
+        file-to-run: ".github/regression_test_scripts/regression_test_action.sh"
     # Use the output from the `pytorch_action` step
     - name: File run status
       run: echo "File run status is ${{ steps.pytorch_action.outputs.file_run_status }}"
