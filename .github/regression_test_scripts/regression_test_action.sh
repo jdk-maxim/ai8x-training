@@ -46,14 +46,14 @@ echo "Running on OS: $(uname -a)"
 
 if ! command -v python3
 then
-    echo "python3 is not installed, attempting to install"
-    sudo apt-get install python3
+    echo "python3 is not installed, but is required..."
+    exit
 fi
 
 if ! command -v pip3
 then
-    echo "pip3 is not installed, attempting to install"
-    sudo apt-get install pip3
+    echo "pip3 is not installed, but is required..."
+    exit
 fi
 
 python3 --version
