@@ -88,3 +88,4 @@ do_a_test_expect_success "ls" "Directory contents"
 
 show_banner "Starting Regression Tests..."
 do_a_test_expect_success "python3 -m pip install -r requirements.txt" "Install requirements.txt"
+do_a_test_expect_success "pytest test_*.py" "Run all python tests of format test_*py"
