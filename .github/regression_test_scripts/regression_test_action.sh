@@ -58,6 +58,8 @@ do_a_test_expect_success "python3 -m pip install -U pip wheel setuptools" "Updat
 do_a_test_expect_success "python3 -m pip install -U pip wheel setuptools" "Update python basics"
 do_a_test_expect_success "python3 -m pip --version" "Show pip version"
 
+do_a_test_expect_success "sudo apt-get -y install vim" "Install VIM"
+
 do_a_test_expect_success "pwd" "Current directory"
 do_a_test_expect_success "cd $GITHUB_WORKSPACE" "Changing to checkout directory..."
 do_a_test_expect_success "pwd" "Checkout directory"
