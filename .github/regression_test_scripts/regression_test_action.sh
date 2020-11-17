@@ -57,12 +57,12 @@ then
 fi
 
 python3 --version
-pip3 --version
+python3 -m pip --version
 
 echo "Updating python basics..."
-pip3 install -U pip wheel setuptools
+python3 -m pip install -U pip wheel setuptools
 
-pip3 --version
+python3 pip3 --version
 
 # FIXME: Should these be in requirements.txt ?
 # FIXME: Shoudl not be needed? pip3 install Cython 
@@ -78,4 +78,4 @@ cd $GITHUB_WORKSPACE || exit
 echo "PWD $(pwd)"
 echo "Directory contents: $(ls)"
 
-do_a_test_expect_success "pip3 install -r requirements.txt" "Install requirements.txt"
+do_a_test_expect_success "python3 pip install -r requirements.txt" "Install requirements.txt"
