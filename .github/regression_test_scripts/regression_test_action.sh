@@ -59,6 +59,11 @@ fi
 python3 --version
 pip3 --version
 
+echo "Updating python basics..."
+pip3 install -U pip wheel setuptools
+
+pip3 --version
+
 # FIXME: Should these be in requirements.txt ?
 # FIXME: Shoudl not be needed? pip3 install Cython 
 #pip3 install pylint
