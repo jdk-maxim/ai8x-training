@@ -42,30 +42,20 @@ do_a_test_expect_failure()
 }
 
 echo "Starting regression actions"
-echo "Running on OS: $(uname -a)"
 
-if ! command -v python3
-then
-    echo "python3 is not installed, but is required..."
-    exit 1
-fi
 
-if ! command -v pip3
-then
-    echo "pip3 is not installed, but is required..."
-    exit 1
-fi
-
+echo "Verify required commands exist"
+do_a_test_expect_success "uname -a" "Running on OS:"
+do_a_test_expect_success "command -v python3" "python3 install check"
+do_a_test_expect_success "command -v pip3" "pip3 install check"
+do_a_test_expect_success "python3 -m pip install -U pip wheel setuptools" "Update python basics"
 do_a_test_expect_success "python3 -m pip install -U pip wheel setuptools" "Update python basics"
 do_a_test_expect_success "python3 -m pip --version" "Show pip version"
 
-echo "PWD $(pwd)"
-echo "Changing to checkout directory..."
-cd $GITHUB_WORKSPACE || exit 1
-echo "PWD $(pwd)"
-echo "Directory contents: $(ls)"
+do_a_test_expect_success "pwd" "Current directory"
+do_a_test_expect_success "cd $GITHUB_WORKSPACE" "Changing to checkout directory..."
+do_a_test_expect_success "pwd" "Checkout directory"
+do_a_test_expect_success "ls" "Directory contents"
 
-do_a_test_expect_success "pyenv local 3.6.9" "Set pyenv local vesion"
-do_a_test_expect_success "python3 -m venv ." "Set pythong to use venv"
-do_a_test_expect_success "bin/activate"        "bin/activate"
+echo "\n\n******************************\nStarting Regression Tests...\n******************************\n\n"
 do_a_test_expect_success "python3 -m pip install -r requirements.txt" "Install requirements.txt"
