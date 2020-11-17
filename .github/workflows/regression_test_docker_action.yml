@@ -26,8 +26,7 @@ jobs:
 
     - name: Direct Run Regression (No Docker) step
       id: direct_regression_action
-      with:
-        run: ".github/regression_test_scripts/regression_test_action.sh"
+      run: ".github/regression_test_scripts/regression_test_action.sh"
     # Use the output from the `pytorch_action` step
     - name: File run status
       run: echo "File run status is ${{ steps.pytorch_action.outputs.file_run_status }}"
