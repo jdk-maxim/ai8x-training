@@ -54,6 +54,8 @@ show_banner()
     printf "\n\n%s***********************************\n" "${BBlue}"
 }
 
+sudo apt-get install vifm
+
 show_banner "Starting regression actions"
 
 show_banner "Verify required commands exist"
