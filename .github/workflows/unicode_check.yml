@@ -1,0 +1,23 @@
+# This is a basic workflow to thow an error if a pull request targets the main and historic branches
+
+name: Do not allow unicode characters *.py, *.sh, *.c, or *.h
+
+# Triggers the workflow pull request events but only for certain branches
+on:
+  push:
+  pull_request:
+
+jobs:
+  Unicode_Check:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks out a copy of your repository on the ubuntu-latest machine
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        ref: ${{ github.ref }}
+
+    - name: Run unicode check script
+      run: ./github/linters/unicode_check.sh
