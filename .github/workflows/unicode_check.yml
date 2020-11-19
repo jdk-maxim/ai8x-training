@@ -13,16 +13,13 @@ jobs:
 
     steps:
     # Checks out a copy of your repository on the ubuntu-latest machine
+    # NOTE: This only checkout out the root repo, NO submodules
     - name: Checkout code
       uses: actions/checkout@v2
       with:
-        submodules: recursive
         ref: ${{ github.ref }}
 
     - name: Run unicode check script
       run: |
-          pwd
           cd $GITHUB_WORKSPACE/.github/linters/
-          pwd
-          ls
           bash unicode_check.sh -xe
