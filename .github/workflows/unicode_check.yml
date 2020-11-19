@@ -20,4 +20,4 @@ jobs:
         ref: ${{ github.ref }}
 
     - name: Run unicode check script
-      run: ./github/linters/unicode_check.sh
+      run: /github/workspace/.github/linters/unicode_check.sh
