@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "-----------------------------"
 echo "Training cats&dogs model"
-scripts/train_catsdogs.sh 〰
+scripts/train_catsdogs.sh
 echo "-----------------------------"
 echo "Training mnist model"
 scripts/train_mnist.sh
