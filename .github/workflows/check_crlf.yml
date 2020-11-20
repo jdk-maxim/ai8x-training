@@ -1,0 +1,19 @@
+name: Example usage
+
+on: 
+  push:
+  pull_request:
+
+jobs:
+  Check_For_CRLF:
+    name: Use the Check CRLF action
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository contents
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Use action to check for CRLF endings
+        uses: erclu/check-crlf@v1.1.2
