@@ -5,7 +5,7 @@ cd ../..
 
 if git ls-files -s | grep "\.sh$" | grep "^100644";
 then
-    #If we get here, that means we found at least one file with unicode in it.
+    #If we get here, that means we found at least one shell file without exec bit set
     echo
     printf "\t \033[1;31m***> Found Shell File WITHOUT exec bit set\n\033[0m"
     echo

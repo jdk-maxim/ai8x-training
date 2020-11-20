@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  Unicode_Check:
+  Exec_Bit_Check:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
       with:
         ref: ${{ github.ref }}
 
-    - name: Run unicode check script
+    - name: Run exec bit on shell script check script
       run: |
           cd $GITHUB_WORKSPACE/.github/linters/
           bash exec_bit_on_sh_check.sh -xe
