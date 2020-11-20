@@ -1,0 +1,25 @@
+# This is a basic workflow to thow an error if a pull request targets the main and historic branches
+
+name: Ensure all shell scripts *.sh have exec bit set
+
+# Triggers the workflow pull request events but only for certain branches
+on:
+  push:
+  pull_request:
+
+jobs:
+  Unicode_Check:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks out a copy of your repository on the ubuntu-latest machine
+    # NOTE: This only checkout out the root repo, NO submodules
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+
+    - name: Run unicode check script
+      run: |
+          cd $GITHUB_WORKSPACE/.github/linters/
+          bash exec_bit_on_sh_check.sh -xe
