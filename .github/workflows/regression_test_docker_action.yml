@@ -20,7 +20,7 @@ jobs:
 
     - name: pytorch_action step
       id: pytorch_action
-      uses: jdk-maxim/pytorch-docker-regression-action@master
+      uses: MaximIntegratedAI/pytorch-docker-action@v1
       with:
         file-to-run: ".github/regression_test_scripts/regression_test_action.sh"
 
