@@ -50,7 +50,7 @@ show_banner()
 
 show_banner "Starting regression actions"
 
-show_banner "Verify required commands exist"
+show_banner "Updating VM and install pre-requirements"
 do_a_test_expect_success "uname -a" "Running on OS:"
 do_a_test_expect_success "sudo apt-get update" "Update apt cache"
 do_a_test_expect_success "sudo apt-get install -y python3-pip libsndfile1-dev" "Install required packages"
