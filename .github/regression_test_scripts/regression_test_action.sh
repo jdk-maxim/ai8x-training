@@ -54,11 +54,11 @@ show_banner "Verify required commands exist"
 do_a_test_expect_success "uname -a" "Running on OS:"
 do_a_test_expect_success "sudo apt-get update" "Update apt cache"
 do_a_test_expect_success "sudo apt-get install -y python3-pip libsndfile1-dev" "Install required packages"
-do_a_test_expect_success "export PATH="$PATH:~/.local/bin"" "Update path for pip installs"
+do_a_test_expect_success "export PATH="$PATH:/home/runner/.local/bin"" "Update path for pip installs"
 
 do_a_test_expect_success "command -v python3" "python3 install check"
 do_a_test_expect_success "command -v pip3" "pip3 install check"
-do_a_test_expect_success "python3 -m pip install -U pip wheel setuptools pytest" "Update python basics"
+do_a_test_expect_success "python3 -m pip install -U pip wheel setuptools" "Update python basics"
 do_a_test_expect_success "python3 -m pip --version" "Show pip version"
 
 do_a_test_expect_success "pwd" "Current directory"
