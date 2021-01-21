@@ -18,11 +18,15 @@ jobs:
         submodules: recursive
         ref: ${{ github.ref }}
 
-    - name: pytorch_action step
-      id: pytorch_action
-      uses: MaximIntegratedAI/pytorch-docker-action@v1
-      with:
-        file-to-run: ".github/regression_test_scripts/regression_test_action.sh"
+#    - name: pytorch_action step
+#      id: pytorch_action
+#      uses: MaximIntegratedAI/pytorch-docker-action@v1
+#      with:
+#        file-to-run: ".github/regression_test_scripts/regression_test_action.sh"
+
+    - name: Direct Run Regression (No Docker) step
+      id: direct_regression_action
+      run: ".github/regression_test_scripts/regression_test_action.sh"
 
     # Use the output from the `pytorch_action` step
     - name: File run status
