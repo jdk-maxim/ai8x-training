@@ -57,8 +57,7 @@ do_a_test_expect_success "sudo apt-get install -y python3-pip libsndfile1-dev" "
 
 do_a_test_expect_success "command -v python3" "python3 install check"
 do_a_test_expect_success "command -v pip3" "pip3 install check"
-do_a_test_expect_success "python3 -m pip install -U pip wheel setuptools" "Update python basics"
-do_a_test_expect_success "python3 -m pip install -U pip wheel setuptools" "Update python basics"
+do_a_test_expect_success "python3 -m pip install -U pip wheel setuptools pytest" "Update python basics"
 do_a_test_expect_success "python3 -m pip --version" "Show pip version"
 
 do_a_test_expect_success "pwd" "Current directory"
